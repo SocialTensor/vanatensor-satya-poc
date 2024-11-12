@@ -7,3 +7,8 @@ demo/*
 !demo/input/
 
 .idea/
+demo/input/.DS_Store
+.env
+temp/
+venv
+input/

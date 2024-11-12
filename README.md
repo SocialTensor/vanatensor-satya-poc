@@ -50,17 +50,20 @@ The proof can be configured using environment variables. When running in an encl
 
 ## Local Development
 
+To setup venv and install dependencies:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+export PYTHONPATH=.
+```
+
 To run the proof locally, without Gramine, you can use Docker:
 
 ```
 docker build -t my-proof .
-docker run \
---rm \
---volume $(pwd)/demo/sealed:/sealed \
---volume $(pwd)/demo/input:/input \
---volume $(pwd)/demo/output:/output \
---env USER_EMAIL=user123@gmail.com \
-my-proof
+docker run --rm --volume $(pwd)/demo/sealed:/sealed --volume $(pwd)/demo/input:/input --volume $(pwd)/demo/output:/output --env USER_EMAIL=larryneilmcgowen1206@gmail.com my-proof
 ```
 
 ## Building and Releasing
@@ -113,15 +116,7 @@ curl -L https://address/of/gsc-my-proof.tar.gz | docker load
 To run the image:
 
 ```
-docker run \
---rm \
---volume /gsc-my-proof/input:/input \
---volume /gsc-my-proof/output:/output \
---device /dev/sgx_enclave:/dev/sgx_enclave \
---volume /var/run/aesmd:/var/run/aesmd \
---volume /mnt/gsc-my-proof/sealed:/sealed \
---env USER_EMAIL=user123@gmail.com \
-gsc-my-proof
+docker run --rm --volume /gsc-my-proof/input:/input --volume /gsc-my-proof/output:/output --device /dev/sgx_enclave:/dev/sgx_enclave --volume /var/run/aesmd:/var/run/aesmd --volume /mnt/gsc-my-proof/sealed:/sealed --env USER_EMAIL=larryneilmcgowen1206@gmail.com gsc-my-proof
 ```
 
 Remember to populate the `/input` directory with the files you want to process.
