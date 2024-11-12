@@ -63,6 +63,9 @@ To run the proof locally, without Gramine, you can use Docker:
 
 ```
 docker build -t my-proof .
+```
+
+```
 docker run --rm --volume $(pwd)/demo/sealed:/sealed --volume $(pwd)/demo/input:/input --volume $(pwd)/demo/output:/output --env USER_EMAIL=larryneilmcgowen1206@gmail.com my-proof
 ```
 
