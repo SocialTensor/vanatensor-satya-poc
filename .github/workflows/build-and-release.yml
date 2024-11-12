@@ -53,8 +53,6 @@ jobs:
     - name: Sign GSC image
       run: |
         cd gsc
-        echo "Signing image with manifest: ../my-proof.manifest.template"
-        cat ../my-proof.manifest.template
         ./gsc sign-image my-proof ../signing_key.pem -c ../config.yaml
 
     - name: Export GSC image to file
