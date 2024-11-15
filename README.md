@@ -66,7 +66,7 @@ docker build -t my-proof .
 ```
 
 ```
-docker run --rm --volume $(pwd)/demo/sealed:/sealed --volume $(pwd)/demo/input:/input --volume $(pwd)/demo/output:/output --env USER_EMAIL=larryneilmcgowen1206@gmail.com my-proof
+docker run --rm --volume $(pwd)/demo/sealed:/sealed --volume $(pwd)/demo/input:/input --volume $(pwd)/demo/output:/output -e AWS_ACCESS_KEY_ID=<your-access-key-id> -e AWS_SECRET_ACCESS_KEY=<your-secret-access-key> my-proof
 ```
 
 ## Building and Releasing
@@ -119,7 +119,7 @@ curl -L https://address/of/gsc-my-proof.tar.gz | docker load
 To run the image:
 
 ```
-docker run --rm --volume /gsc-my-proof/input:/input --volume /gsc-my-proof/output:/output --device /dev/sgx_enclave:/dev/sgx_enclave --volume /var/run/aesmd:/var/run/aesmd --volume /mnt/gsc-my-proof/sealed:/sealed --env USER_EMAIL=larryneilmcgowen1206@gmail.com gsc-my-proof
+docker run --rm --volume /gsc-my-proof/input:/input --volume /gsc-my-proof/output:/output --device /dev/sgx_enclave:/dev/sgx_enclave --volume /var/run/aesmd:/var/run/aesmd --volume /mnt/gsc-my-proof/sealed:/sealed gsc-my-proof
 ```
 
 Remember to populate the `/input` directory with the files you want to process.

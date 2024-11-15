@@ -12,3 +12,4 @@ demo/input/.DS_Store
 temp/
 venv
 input/
+temp.txt

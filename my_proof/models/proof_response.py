@@ -24,9 +24,11 @@ class ProofResponse(BaseModel):
     dlp_id: int
     valid: bool = False
     score: float = 0.0
-    authenticity: float = 0.0
-    ownership: float = 0.0
-    quality: float = 0.0
+    time_minimums: float = 0.0
+    time_correlation: float = 0.0
+    time_distribution: float = 0.0
+    repeat_anwsers: float = 0.0
+    both_sides: float = 0.0
+    model_distribution: float = 0.0
+    poison_data: float = 0.0
     uniqueness: float = 0.0
-    attributes: Optional[Dict[str, Any]] = {}
-    metadata: Optional[Dict[str, Any]] = {}

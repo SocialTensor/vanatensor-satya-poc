@@ -19,7 +19,9 @@ def load_config() -> Dict[str, Any]:
         'dlp_id': 5,
         'use_sealing': os.path.isdir(SEALED_DIR),
         'input_dir': INPUT_DIR,
-        'user_email': os.environ.get('USER_EMAIL', None),
+        'aws_access_key_id': os.environ.get('AWS_ACCESS_KEY_ID', None),
+        'aws_secret_access_key': os.environ.get('AWS_SECRET_ACCESS_KEY', None),
+        # 'user_email': os.environ.get('USER_EMAIL', None),
     }
     logging.info(f"Using config: {json.dumps(config, indent=2)}")
     return config
@@ -32,7 +34,7 @@ def run() -> None:
 
     if not input_files_exist:
         raise FileNotFoundError(f"No input files found in {INPUT_DIR}")
-    extract_input()
+    # extract_input()
 
     proof = Proof(config)
     proof_response = proof.generate()
