@@ -1,5 +1,4 @@
 *.pem
-*.tar.gz
 __pycache__/
 *.pyc
 
