@@ -43,7 +43,7 @@ class HashManager:
             return self._initialize_empty_hash_file()
         except Exception as e:
             logging.error(f"Error fetching remote hashes: {str(e)}")
-            raise
+            return []
 
     def update_remote_hashes(self, new_hashes):
         """Update remote JSON file with new hashes"""
@@ -62,7 +62,7 @@ class HashManager:
             return True
         except Exception as e:
             logging.error(f"Error updating remote hashes: {str(e)}")
-            raise
+            
 
     def add_hash(self, new_hash):
         """Add a single hash to the remote file"""
