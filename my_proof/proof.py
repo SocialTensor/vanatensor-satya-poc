@@ -91,11 +91,12 @@ def Quality(data_list: List[Dict[str, Any]], aws_access_key_id: str, aws_secret_
 
 def Uniqueness(data_list: List[Dict[str, Any]], aws_access_key_id: str, aws_secret_access_key: str) -> float:
     hash_manager = HashManager(bucket_name="vanatensordlp", remote_file_key="verified_hashes/hashes.json", aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
-    hash_exists = hash_manager.generate_hash(data_list) in hash_manager.get_remote_hashes()
-    if hash_exists:
+    generated_hash = hash_manager.generate_hash(data_list)
+    existing_hashes = hash_manager.get_remote_hashes()
+    if generated_hash in existing_hashes or generated_hash == []:
         return 0.0
     else:
-        hash_manager.add_hash(hash_manager.generate_hash(data_list))
+        hash_manager.update_remote_hashes(generated_hash)
         return 1.0
 
 def display_report(report: dict) -> None:
