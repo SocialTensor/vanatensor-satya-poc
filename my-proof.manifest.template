@@ -13,7 +13,8 @@ allowed_files = [
 [loader]
 # Whitelist ENV variables that get passed to the enclave
 # Using { passthrough = true } allows values to be passed in from the Satya node's /RunProof endpoint
-env.USER_EMAIL = { passthrough = true }
+env.AWS_ACCESS_KEY_ID = { passthrough = true }
+env.AWS_SECRET_ACCESS_KEY = { passthrough = true }
 
 # These directories are mounted from the host, which will be a temporary directory from the Satya node that's running the proof.
 [[fs.mounts]]
