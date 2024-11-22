@@ -35,3 +35,4 @@ class ProofResponse(BaseModel):
     quality: float = 0.0
     ownership: float = 1.0
     authenticity: float = 1.0
+    attributes: Dict[str, Any] = {}
