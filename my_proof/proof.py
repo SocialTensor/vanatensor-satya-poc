@@ -58,6 +58,9 @@ class Proof:
         self.proof_response.both_sides = qualityRes['Both_Sides']['score']
         self.proof_response.model_distribution = qualityRes['Model_Distribution']['score']
         self.proof_response.poison_data = qualityRes['Poisin_Data']['score']
+        self.proof_response.quality = qualityRes['score']
+        self.proof_response.ownership = 1.0
+        self.proof_response.authenticity = 1.0
         
         self.proof_response.uniqueness = Uniqueness(input_data, self.aws_access_key_id, self.aws_secret_access_key)
 

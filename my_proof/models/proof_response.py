@@ -32,3 +32,6 @@ class ProofResponse(BaseModel):
     model_distribution: float = 0.0
     poison_data: float = 0.0
     uniqueness: float = 0.0
+    quality: float = 0.0
+    ownership: float = 1.0
+    authenticity: float = 1.0
