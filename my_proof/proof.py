@@ -49,8 +49,8 @@ class Proof:
                     input_data = json.load(f)
 
         qualityRes = Quality(input_data, self.aws_access_key_id, self.aws_secret_access_key)
-        self.proof_response.score = qualityRes['score']
-        self.proof_response.valid = qualityRes['score'] > 0.65
+        self.proof_response.score = (qualityRes['score'])*(len(input_data)/100)
+        self.proof_response.valid = qualityRes['score'] > 0.05
         self.proof_response.time_minimums = qualityRes['Time_Minimums']['score']
         self.proof_response.time_correlation = qualityRes['Time_Correlation']['score']
         self.proof_response.time_distribution = qualityRes['Time_Distribution']['score']
