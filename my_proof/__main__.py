@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 def load_config() -> Dict[str, Any]:
     """Load proof configuration from environment variables."""
     config = {
-        'dlp_id': 5,
+        'dlp_id': 10,
         'use_sealing': os.path.isdir(SEALED_DIR),
         'input_dir': INPUT_DIR,
         'aws_access_key_id': os.environ.get('AWS_ACCESS_KEY_ID', None),
