@@ -12,7 +12,7 @@ This poc provides a basic structure for building proof tasks that:
 
 ```json
 {
-  "dlp_id": 12,
+  "dlp_id": 1,
   "valid": true,
   "score": 0.7614457831325301,
   "time_minimums": 1.0,
