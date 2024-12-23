@@ -8,7 +8,7 @@ from typing import Dict, Any
 
 from my_proof.proof import Proof
 
-INPUT_DIR, OUTPUT_DIR, SEALED_DIR = '/input', '/output', '/sealed'
+INPUT_DIR, OUTPUT_DIR = '/input', '/output'
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
@@ -16,8 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 def load_config() -> Dict[str, Any]:
     """Load proof configuration from environment variables."""
     config = {
-        'dlp_id': 5,
-        'use_sealing': os.path.isdir(SEALED_DIR),
+        'dlp_id': 1,
         'input_dir': INPUT_DIR,
         'aws_access_key_id': os.environ.get('AWS_ACCESS_KEY_ID', None),
         'aws_secret_access_key': os.environ.get('AWS_SECRET_ACCESS_KEY', None),
