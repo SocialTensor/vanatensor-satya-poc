@@ -12,3 +12,4 @@ temp/
 venv
 input/
 temp.txt
+.DS_Store
