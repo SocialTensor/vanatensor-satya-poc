@@ -1,6 +1,5 @@
 pydantic
 requests
-rich
 boto3
 python-gnupg
 pgpy

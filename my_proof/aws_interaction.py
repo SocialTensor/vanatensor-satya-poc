@@ -1,7 +1,5 @@
 import boto3
 import json
-import os
-from datetime import datetime
 
 def download_json_from_s3(bucket_name, file_key, aws_access_key_id, aws_secret_access_key):
 
